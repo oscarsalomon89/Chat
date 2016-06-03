@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chat room</title>  
+  <link rel="stylesheet" href="css/foundation.min.css">
+</head>
+<body>
+  <h3>Connected users:</h3>
+  <a id="btn-login" href="#" data-reveal-id="login-modal">Login</a>
+  <ul id="online-userslist"></ul>
+  <div class="medium-8 medium-offset-2">
+    <h3>Mensajes:</h3>
+    <div id="list-msgs"></div>
+    <textarea id="new-msg" cols="30" rows="5" placeholder="New message"></textarea>
+  </div>
+  
+  <!-- Modal dialog for login -->
+  <div id="login-modal" class="reveal-modal" data-reveal>
+    <h2>Login</h2>
+    <div id="alerts"></div>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input name="username" type="text" placeholder="Username" required >
+      
+      <br><label>Password:</label>
+      <input name="password" type="password" placeholder="Password" required >
+      
+      <button onclick="login()" type="button">Login</button>
+      <br><span>Or <a href='/signup'>signup</a> if you dont have an account</span>
+    </form>
+  </div>
+  
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
